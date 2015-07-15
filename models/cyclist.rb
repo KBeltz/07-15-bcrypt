@@ -7,7 +7,7 @@ class Cyclist < ActiveRecord::Base
   include BCrypt
 
 
-  attr_accessor :user_name, :password, :first_name, :last_name, :nickname
+  attr_accessor :user_name, :password, :first_name, :last_name
   attr_reader :id
 
   # Initializes a new Cyclist object

@@ -3,7 +3,7 @@ DATABASE = SQLite3::Database.new("commuters.db")
 DATABASE.execute("PRAGMA foreign_keys = ON;")
 
 # Make the tables.
-DATABASE.execute("CREATE TABLE IF NOT EXISTS cyclists (id INTEGER PRIMARY KEY, user_name TEXT UNIQUE NOT NULL, password TEXT NOT NULL, first_name TEXT NOT NULL, last_name TEXT NOT NULL, nickname TEXT);")
+DATABASE.execute("CREATE TABLE IF NOT EXISTS cyclists (id INTEGER PRIMARY KEY, user_name TEXT UNIQUE NOT NULL, password TEXT NOT NULL, first_name TEXT NOT NULL, last_name TEXT NOT NULL);")
 
 DATABASE.execute("CREATE TABLE IF NOT EXISTS bikes (id INTEGER PRIMARY KEY, cyclist_id INTEGER NOT NULL, bike_name TEXT, description TEXT, FOREIGN KEY (cyclist_id) REFERENCES cyclists(id));")
 
