@@ -1,9 +1,10 @@
 require_relative "../database_class_methods.rb"
 require_relative "../database_instance_methods.rb"
 
-class Cyclist
+class Cyclist < ActiveRecord::Base
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
+  include BCrypt
 
 
   attr_accessor :user_name, :password, :first_name, :last_name, :nickname
@@ -16,18 +17,25 @@ class Cyclist
   # password   - String containing the user password
   # first_name - String containing the first name of the cyclist
   # last_name  - String containing the last name of the cyclist
-  # nickname   - (optional) String containing the nickname of the cyclist
   #
   # Returns a Cyclist object
 
   def initialize(options = {})
-
-    # Example: {"id" => 1, "first_name" => "Johnny", "last_name" => "Doe", "nickname" => "JohnBikes"}
+    # Example: {"id" => 1, "user_name" => "JohnBikes", "password" => "encrypted_string", "first_name" => "Johnny", "last_name" => "Doe"}
     @id = options["id"]
+    @user_name = options["user_name"]
+    @Password = options["password"]
     @first_name = options["first_name"]
     @last_name = options["last_name"]
-    @nickname = options["nickname"]
+  end
 
+  def password
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
   end
 
   # method to validate cyclist profiles before they are added to the database
