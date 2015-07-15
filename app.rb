@@ -3,6 +3,8 @@ require "sinatra"
 require "sinatra/reloader"
 require "HTTParty"
 require "bcrypt"
+require "active_record"
+set :sessions, true
 
 # SQL/Database
 require "sqlite3"

@@ -24,7 +24,7 @@ class Cyclist < ActiveRecord::Base
     # Example: {"id" => 1, "user_name" => "JohnBikes", "password" => "encrypted_string", "first_name" => "Johnny", "last_name" => "Doe"}
     @id = options["id"]
     @user_name = options["user_name"]
-    @Password = options["password"]
+    @password = options["password"]
     @first_name = options["first_name"]
     @last_name = options["last_name"]
   end
