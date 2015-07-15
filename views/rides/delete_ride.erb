@@ -1,0 +1,9 @@
+<h3>Delete Ride</h3>
+
+
+  <p><h4>Choose a ride to delete:</h4></p>
+    <% Ride.all.each do |item| %>
+      <ul>
+        <li><a href="/delete_ride/<%= item.id %>"> Ride Name: <%= item.ride_name %> / Distance (miles): <%= item.miles %> / Date/Time: <%= item.period %></a></li>
+      </ul>
+    <% end %>

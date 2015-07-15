@@ -1,0 +1,20 @@
+<h3>View Rides For a Specific Bike</h3>
+
+  <p><h4>Choose a bike to view:</h4></p>
+
+  <TABLE BORDER="5">
+    <TH>ID</TH>
+    <TH>Bike Name</TH>
+    <TH>Description</TH>
+
+    <% Bike.all.each do |item| %>
+
+      <TR>
+        <TD><a href='/bikes_and_rides/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD>
+        <TD><%= "#{item.bike_name}" %></TD>
+        <TD><%= "#{item.description}" %></TD>
+      </TR>
+
+    <% end %>
+
+  </TABLE>

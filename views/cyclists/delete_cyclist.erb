@@ -1,0 +1,8 @@
+<h3>Delete Cyclist Profile</h3>
+
+  <p><h4>Choose a cyclist to delete:</h4></p>
+  <% Cyclist.all.each do |item| %>
+    <ul>
+      <li><a href="/delete_cyclist/<%= item.id %>"> First Name: <%= item.first_name %> / Last Name: <%= item.last_name %> / Nickname: <%= item.nickname %></a></li>
+    </ul>
+      <% end %>

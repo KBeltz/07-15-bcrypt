@@ -1,0 +1,23 @@
+<h3> Add Ride</h3>
+
+<form action= "/add_ride">
+
+  <p><h4>Who participated in this ride?</h4><select name="cyclist_id"></p>
+    <% Cyclist.all.each do |item| %>
+      <option value="<%= item.id %>"> <%= item.first_name %> <%= item.last_name %></option>
+    <% end %>
+  </select>
+
+  <p><h4>What bike was used on the ride?</h4><select name="bike_id"></p>
+    <% Bike.all.each do |item| %>
+      <option value="<%= item.id %>"> <%= item.bike_name %> <%= item.description %></option>
+    <% end %>
+  </select>
+
+  <p>Ride Name: <input type="name" name= "ride_name" placeholder="Keystone Trail"></p>
+
+  <p>Distance (miles): <input type="number" min="0" step="0.1" name= "miles" placeholder="23.2"></p>
+
+  <input type="submit" value="add ride">
+
+</form>

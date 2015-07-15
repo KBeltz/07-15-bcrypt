@@ -1,0 +1,7 @@
+<h3>All of <%= @bike.bike_name %>'s Rides.</h3>
+
+<ul>
+  <% @bikes_and_rides.each do |item| %>
+    <li><%= item["ride_name"] %> / <%= item["miles"] %> miles</li>
+  <% end %>
+</ul>

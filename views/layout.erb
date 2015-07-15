@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title> <%= @page_title || "Bike Commuter Database" %> </title>
+    <link rel="stylesheet" href="global.css">
+  </head>
+
+  <header>
+    <div id="top-bar">
+      <p id="title">Bike Commuter Database</p>
+      <img id="hamburger" src="menu.png">
+      <div id="nav_menu">
+        <ul id="drop_menu">
+          <a href="/cyclists"><li>Manage Cyclists</li></a>
+          <a href="/bikes"><li>Manage Bikes</li></a>
+          <a href="/rides"><li>Manage Rides</li></a>
+          <a href="/home"><li>Main</li></a>
+        </ul>
+      </div>
+      <div id="nav_menu_inline">
+        <p id="title_inline">Bike Commuter Database</p>
+        <a class="inline_links" href="/cyclists"> Manage Cyclists </a>
+        <a class="inline_links" href="/bikes"> Manage Bikes |</a>
+        <a class="inline_links" href="/rides"> Manage Rides |</a>
+        <a class="inline_links" href="/home"> Main |</a>
+      </div>
+    </div>
+  </header>
+
+  <body>
+    <%= yield %>
+    <script type="text/javascript" src="global.js"></script>
+  </body>
+
+</html>

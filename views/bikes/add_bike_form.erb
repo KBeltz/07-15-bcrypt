@@ -1,0 +1,17 @@
+<h3> Add Bike to Database</h3>
+
+<form action= "/add_bike">
+
+  <p><h4>Choose Bike Owner:</h4><select name="cyclist_id"></p>
+    <% Cyclist.all.each do |item| %>
+      <option value="<%= item.id %>"> <%= item.first_name %> <%= item.last_name %></option>
+    <% end %>
+  </select>
+
+  <p>Bike Name: <input type="name" name= "bike_name" placeholder="Bianchi"></p>
+
+  <p>Description (optional): <input type="name" name= "description" placeholder="Teal road bike"></p>
+
+  <input type="submit" value="add bike">
+
+</form>

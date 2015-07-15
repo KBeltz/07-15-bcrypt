@@ -1,0 +1,16 @@
+<h3>Edit Bike Info</h3>
+
+<form action="/edit_bike">
+
+  <p><h4>Update bike info as necessary.</h4></p>
+
+  <p>New Owner ID:<input type="number" name="cyclist_id" value="<%= @new_bike.cyclist_id %>"></p>
+
+  <p>Bike Name: <input type="text" name="bike_name" value="<%= @new_bike.bike_name %>"></p>
+
+  <p>Description: <input type="text" name="description" value="<%= @new_bike.description %>"></p>
+
+  <input type="hidden" name="x" value="<%= params["x"] %>">
+
+  <p><input type="submit" value="edit bike"></p>
+</form>

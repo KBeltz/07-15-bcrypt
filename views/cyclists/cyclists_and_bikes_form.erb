@@ -1,0 +1,22 @@
+<h3>View Bikes Owned by a Cyclist</h3>
+
+  <p><h4>Choose a cyclist to view:</h4></p>
+
+  <TABLE BORDER="5">
+    <TH>ID</TH>
+    <TH>First Name</TH>
+    <TH>Last Name</TH>
+    <TH>Nickname</TH>
+
+    <% Cyclist.all.each do |item| %>
+
+      <TR>
+        <TD><a href='/cyclists_and_bikes/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD>
+        <TD><%= "#{item.first_name}" %></TD>
+        <TD><%= "#{item.last_name}" %></TD>
+        <TD><%= "#{item.nickname}" %></TD>
+      </TR>
+
+    <% end %>
+
+  </TABLE>

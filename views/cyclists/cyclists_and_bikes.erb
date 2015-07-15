@@ -1,0 +1,7 @@
+<h3>All of <%= @cyclist.first_name %>'s Bikes.</h3>
+
+<ul>
+  <% @cyclists_and_bikes.each do |item| %>
+    <li><%= item["bike_name"] %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,24 @@
+<p><h3>Choose a ride to edit:</h3></p>
+
+  <TABLE BORDER="5">
+    <TH>ID</TH>
+    <TH>Cyclist ID</TH>
+    <TH>Bike ID</TH>
+    <TH>Ride Name</TH>
+    <TH>Distance (miles)</TH>
+    <TH>Date/Time</TH>
+
+    <% Ride.all.each do |item| %>
+
+      <TR>
+        <TD><a href='/edit_ride_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD>
+        <TD><%= "#{item.cyclist_id}" %></TD>
+        <TD><%= "#{item.bike_id}" %></TD>
+        <TD><%= "#{item.ride_name}" %></TD>
+        <TD><%= "#{item.miles}" %></TD>
+        <TD><%= "#{item.period}" %></TD>
+      </TR>
+
+    <% end %>
+
+  </TABLE>

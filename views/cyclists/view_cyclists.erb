@@ -1,0 +1,20 @@
+<p><h3>View Cyclists</h3></p>
+
+<TABLE BORDER="5">
+  <TH>ID</TH>
+  <TH>First Name</TH>
+  <TH>Last Name</TH>
+  <TH>Nickname</TH>
+
+  <% Cyclist.all.each do |item| %>
+
+    <TR>
+      <TD><%= "#{item.id}" %>.</TD>
+      <TD><%= "#{item.first_name}" %></TD>
+      <TD><%= "#{item.last_name}" %></TD>
+      <TD><%= "#{item.nickname}" %></TD>
+    </TR>
+
+  <% end %>
+
+</TABLE>

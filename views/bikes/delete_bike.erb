@@ -1,0 +1,8 @@
+<h3>Delete Bike</h3>
+
+  <p><h4>Choose a bike to delete:</h4></p>
+  <% Bike.all.each do |item| %>
+    <ul>
+      <li><a href="/delete_bike/<%= item.id %>"> Bike Owner's Cyclist ID: <%= item.cyclist_id %> / Bike Name: <%= item.bike_name %> / Description: <%= item.description %></a></li>
+    </ul>
+      <% end %>

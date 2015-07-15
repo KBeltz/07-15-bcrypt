@@ -1,0 +1,12 @@
+<h3>Edit Ride Data</h3>
+
+<form action="/edit_ride">
+
+  <p><h4>Update ride data as necessary.</h4></p>
+  <p>Ride Name: <input type="text" name="ride_name" value="<%= @new_ride.ride_name %>"></p>
+  <p>Distance (miles): <input type="text" name="miles" value="<%= @new_ride.miles %>"></p>
+
+  <input type="hidden" name="x" value="<%= params["x"] %>">
+
+  <p><input type="submit" value="edit ride"></p>
+</form>
