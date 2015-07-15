@@ -6,7 +6,7 @@ class Cyclist < ActiveRecord::Base
   include DatabaseInstanceMethods
   include BCrypt
 
-
+  # do I need to refactor this and have a separate user class or use this as the user model?
   attr_accessor :user_name, :password, :first_name, :last_name
   attr_reader :id
 
