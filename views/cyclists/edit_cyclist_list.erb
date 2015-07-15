@@ -4,17 +4,17 @@
 
   <TABLE BORDER="5">
     <TH>ID</TH>
+    <TH>User Name</TH>
     <TH>First Name</TH>
     <TH>Last Name</TH>
-    <TH>Nickname</TH>
 
     <% Cyclist.all.each do |item| %>
 
       <TR>
-        <TD><a href='/edit_cyclist_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD>
+        <TD><%= "#{item.id}" %>.</TD>
+        <TD><a href='/cyclists/<%= "#{item.user_name}" %>'><%= "#{item.user_name}" %>.</a></TD>
         <TD><%= "#{item.first_name}" %></TD>
         <TD><%= "#{item.last_name}" %></TD>
-        <TD><%= "#{item.nickname}" %></TD>
       </TR>
 
     <% end %>
