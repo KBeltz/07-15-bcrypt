@@ -6,9 +6,14 @@ class Cyclist < ActiveRecord::Base
   include DatabaseInstanceMethods
   include BCrypt
 
-  # do I need to refactor this and have a separate user class or use this as the user model?
   attr_accessor :user_name, :password, :first_name, :last_name
   attr_reader :id
+
+  validates :id, presence: true
+  validates :user_name, presence: true
+  validates :password, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   # Initializes a new Cyclist object
   #
@@ -35,7 +40,7 @@ class Cyclist < ActiveRecord::Base
   end
 
   def self.authenticate(user_name, password)
-    
+
   end
 
   def password=(new_password)
@@ -49,11 +54,11 @@ class Cyclist < ActiveRecord::Base
   # name2 - String containing the last name of the cyclist being added
   #
   # Returns boolean
-  def self.valid?(user_name, password)
-    if user_name.empty? || password.empty?
-      true
-    end
-  end
+  # def self.valid?(user_name, password)
+  #   if user_name.empty? || password.empty?
+  #     true
+  #   end
+  # end
 
   # Get all bikes owned by a specific cyclist.
   #
