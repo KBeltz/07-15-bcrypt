@@ -29,8 +29,13 @@ class Cyclist < ActiveRecord::Base
     @last_name = options["last_name"]
   end
 
-  def password
-    @password ||= Password.new(password_hash)
+  def encrypt_password
+    self.password_salt = BCrypt::Engine.generate_salt
+    self.password_hash = BCrypt.Engine.hash_secret(password, password_salt)
+  end
+
+  def self.authenticate(user_name, password)
+    
   end
 
   def password=(new_password)
