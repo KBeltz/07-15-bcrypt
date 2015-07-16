@@ -15,3 +15,14 @@ get "/login" do
   @page_title = "User Login"
   erb :"/main/login"
 end
+
+get "/login_attempt"
+  pass_attempt = params["password"]
+  stored_pass = BCrypt::Password.new(password-from-database)
+
+  if stored_pass == pass_attempt
+    erb :"/main/success"
+  else
+    erb :"/main/login_error"
+  end
+end
