@@ -1,3 +1,5 @@
+# Is this going to work if it is just added in the cyclist model?
+
 class User
   def new
     @user = User.new
